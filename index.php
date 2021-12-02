@@ -134,9 +134,9 @@ background-color:#033076; !important;*/
 <?php
   // Server login details
   $host = 'localhost';
-  $dbname = '115696';
-  $username = '115696';
-  $password = 'saltaire';
+  $dbname = 'database';
+  $username = 'user1';
+  $password = '**********';
     
   $dsn = "mysql:host=$host;dbname=$dbname"; 
   // SQL Get all users
