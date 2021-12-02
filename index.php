@@ -132,15 +132,18 @@ background-color:#033076; !important;*/
 </div>
 
 <?php
+  // Server login details
   $host = 'localhost';
   $dbname = '115696';
   $username = '115696';
   $password = 'saltaire';
     
   $dsn = "mysql:host=$host;dbname=$dbname"; 
-  // get all users
+  // SQL Get all users
   $sql = "SELECT * FROM employees";
    
+  // try to connect and send SQL query with details
+  // if unable return error 
   try{
    $pdo = new PDO($dsn, $username, $password);
    $stmt = $pdo->query($sql);
@@ -154,13 +157,13 @@ background-color:#033076; !important;*/
 ?>
 
 
-  
+<!-- MAIN CONTENT - TABLE -->
 <div class="container">
   <div class="row">
     <div class="col-sm-2">
     </div>
     <div class="col-sm-8">
-    <h2 style="text-align: center;">Employee Records</h2>
+    <h2 style="text-align: center; margin-top: 20px;">Employee Records</h2>
     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
       <thead>
         <tr>
@@ -189,7 +192,7 @@ background-color:#033076; !important;*/
       <?php endwhile; ?>
      </tbody>
     </table>
-      <div class="text-center" >
+      <div class="text-center"  style="margin-top: 25px;">
       <a href="adduser.html"><button type="button"class="btn btn-secondary">Add Employee Record</button></a>
       <a href="adduser.html"><button type="button"class="btn btn-secondary">View Log</button></a>
       <a href="adduser.html"><button type="button"class="btn btn-secondary">Download as CSV</button></a>
@@ -201,7 +204,7 @@ background-color:#033076; !important;*/
 </div>
 
 
-
+<!-- Enables datatable -->
 <script type="text/javascript">
 $(document).ready(function () {
   $('#dtBasicExample').DataTable();
@@ -210,10 +213,7 @@ $(document).ready(function () {
 </script>
 
 
-
-
-
-
+<!-- FOOTER -->
 <div class="footer-copyright text-center py-3">© 2021 Copyright 
   <a href="https://nathan-hannah.uk/" target="blank_"> Nathan Hannah</a>
 </div>
